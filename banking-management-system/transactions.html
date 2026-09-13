@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Bank | Transactions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <div class="main-content">
+        <header class="top-header" id="topHeader"></header>
+
+        <div class="page-container">
+            <h1 class="page-title">Transaction History</h1>
+
+            <div class="table-container">
+                <div class="filters">
+                    <div class="filter-group" style="flex: 1; min-width: 250px;">
+                        <input type="text" id="searchTxn" class="form-control"
+                            placeholder="Search by description or ID...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="typeFilter" class="form-control">
+                            <option value="All">All Types</option>
+                            <option value="Credit">Credit (+)</option>
+                            <option value="Debit">Debit (-)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="statusFilter" class="form-control">
+                            <option value="All">All Status</option>
+                            <option value="Success">Success</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Failed">Failed</option>
+                        </select>
+                    </div>
+                    <button class="btn" id="filterBtn" style="width: auto;"><i class="fas fa-filter"></i> Apply
+                        Filters</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="txnsBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

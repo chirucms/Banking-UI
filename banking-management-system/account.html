@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Bank | My Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <div class="main-content">
+        <header class="top-header" id="topHeader"></header>
+
+        <div class="page-container">
+            <h1 class="page-title">My Account</h1>
+
+            <div class="profile-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h3 style="color: var(--primary-color);"><i class="fas fa-user-circle"></i> Personal Information
+                    </h3>
+                    <button class="btn btn-outline" style="width: auto; padding: 8px 15px;" id="editProfileBtn"><i
+                            class="fas fa-edit"></i> Edit Profile</button>
+                </div>
+
+                <div class="grid-2"
+                    style="margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+                    <div>
+                        <p style="color: var(--text-light); font-size: 14px;">Customer Name</p>
+                        <p style="font-weight: 500;" id="accName">-</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--text-light); font-size: 14px;">Customer ID</p>
+                        <p style="font-weight: 500;" id="accId">-</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--text-light); font-size: 14px;">Mobile Number</p>
+                        <p style="font-weight: 500;" id="accMobile">-</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--text-light); font-size: 14px;">Email</p>
+                        <p style="font-weight: 500;" id="accEmail">-</p>
+                    </div>
+                    <div style="grid-column: 1 / -1;">
+                        <p style="color: var(--text-light); font-size: 14px;">Address</p>
+                        <p style="font-weight: 500;" id="accAddress">-</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="color: var(--primary-color);"><i class="fas fa-university"></i> Bank Account Information</h3>
+                    <button class="btn btn-outline" style="width: auto; padding: 8px 15px;" id="addAccountBtn"><i class="fas fa-plus"></i> Add Account</button>
+                </div>
+                
+                <div id="bAccContainer">
+                    <!-- Populated by JS -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
