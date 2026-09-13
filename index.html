@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Bank | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="fas fa-university fa-3x" style="color: var(--primary-color);"></i>
+                <h2>Welcome to Shakti Bank</h2>
+                <p style="color: var(--text-light); font-size: 14px; margin-top: 5px;">Secure Banking Management System
+                </p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Customer ID / Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your ID">
+                    <span class="error-message" id="loginError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" style="color: var(--primary-color); font-weight: 500;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Secure Login <i class="fas fa-lock"
+                        style="margin-left: 5px;"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

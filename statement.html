@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Bank | Bank Statement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <div class="main-content">
+        <header class="top-header" id="topHeader"></header>
+
+        <div class="page-container">
+            <h1 class="page-title">Generate Account Statement</h1>
+
+            <div class="profile-card" style="margin-bottom: 30px;">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Select Account</label>
+                        <select class="form-control" id="stmtAccountSelect">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Transaction Type</label>
+                        <select class="form-control">
+                            <option>All Transactions</option>
+                            <option>Credit Only</option>
+                            <option>Debit Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>From Date</label>
+                        <input type="date" id="sFromDate" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>To Date</label>
+                        <input type="date" id="sToDate" class="form-control">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 15px; margin-top: 15px;">
+                    <button class="btn" id="generateBtn" style="width: auto;">Generate Statement</button>
+                    <button class="btn btn-outline" id="printBtn" style="width: auto;"><i class="fas fa-print"></i>
+                        Print</button>
+                </div>
+            </div>
+
+            <div class="table-container" id="statementResult" style="display: none;">
+                <div
+                    style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 10px;">Shakti Bank Official Statement</h2>
+                    <p style="color: var(--text-light);" id="stmtAccInfo">Account: - | Name: -</p>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Narration</th>
+                            <th>Ref No.</th>
+                            <th>Credit</th>
+                            <th>Debit</th>
+                            <th>Closing Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statementBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+                <div style="text-align: center; margin-top: 30px; color: var(--text-light); font-size: 12px;">
+                    <p>*** End of Statement ***</p>
+                    <p>This is a computer-generated statement and does not require a physical signature.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/script.js"></script>
+
+    <style>
+        @media print {
+
+            .sidebar,
+            .top-header,
+            .profile-card,
+            .page-title,
+            .toast-container {
+                display: none !important;
+            }
+
+            .main-content {
+                margin: 0;
+            }
+
+            .table-container {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</body>
+
+</html>

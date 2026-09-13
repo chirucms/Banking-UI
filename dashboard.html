@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Bank | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <div class="main-content">
+        <header class="top-header" id="topHeader"></header>
+
+        <div class="page-container">
+            <h1 class="page-title">Welcome back, <span id="welcomeName"></span>!</h1>
+
+            <div style="margin-bottom: 25px; max-width: 300px;">
+                <label style="font-weight: 500; font-size: 14px; color: var(--text-main); margin-bottom: 8px; display: block;">Viewing Account:</label>
+                <select class="form-control" id="dashboardAccountSelect" style="background-color: var(--card-bg);">
+                    <!-- Populated by JS -->
+                </select>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-header">
+                        Available Balance
+                        <div class="card-icon bg-blue"><i class="fas fa-wallet"></i></div>
+                    </div>
+                    <div class="card-value" id="availBalance">₹0.00</div>
+                    <p style="color: var(--text-light); font-size: 14px;">Updated just now</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Account Number
+                        <div class="card-icon bg-green"><i class="fas fa-university"></i></div>
+                    </div>
+                    <div class="card-value" id="accNumber">**** **** ****</div>
+                    <p style="color: var(--text-light); font-size: 14px;" id="accType">Account Type</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Reward Points
+                        <div class="card-icon bg-yellow"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="card-value">2,450</div>
+                    <p style="color: var(--text-light); font-size: 14px;">Redeemable value: ₹24.50</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <a href="transfer.html" class="action-btn"><i class="fas fa-paper-plane"
+                        style="color: var(--primary-color);"></i> Transfer Money</a>
+                <a href="transactions.html" class="action-btn"><i class="fas fa-exchange-alt"
+                        style="color: var(--success-color);"></i> View Transactions</a>
+                <a href="statement.html" class="action-btn"><i class="fas fa-file-invoice"
+                        style="color: var(--warning-color);"></i> Get Statement</a>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 style="color: var(--primary-color);">Recent Transactions</h3>
+                    <a href="transactions.html"
+                        style="color: var(--accent-color); font-size: 14px; font-weight: 500;">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentTxnBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
